@@ -1,0 +1,75 @@
+
+<doctype html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title> UMAI</title>
+<head>
+<style type ="text/css">
+
+body{
+     background-color:white;
+    }
+   div.title{
+         background-color:lightgrey;
+		 height:40px;
+		 width:400px;
+		 color:white;
+		 text-align:center;
+		 clear:both;
+		 text-decoration:none;
+		 padding-bottom:0px;
+		 font-size:30px;
+		 margin: 0 auto;
+		}
+		
+  div.form {
+          margin: 0 auto;
+         text-align:center;
+		 padding-top :50px;
+        
+		}
+
+</style>
+</head>
+
+<body>
+
+<div class="title"><a href="index.html"> UMAI </a></div>
+<div class="form">
+     <p><h3> My Simple Interest </h3></p>
+	 <pre>
+        Principal (in RM)  :<input type="text" id="principal" placeholder="eg, RM 10,000"><br>
+	 Rate of interest(%):<input type="text" id="rate"  placeholder="eg, 5%"> <br>
+	 Time period        :<input type="text" id="time"  placeholder="eg, 1 year"> <br>
+     <button onclick="mySimpleInterest()">Simple Interest</button>
+     </pre>
+	  <p id="result"></p>
+ </div>
+  
+  <!-- JavaScript Code -->
+    <script>
+            function mySimpleInterest()
+            {
+                var principal = document.getElementById("principal").value;
+				var rate = document.getElementById("rate").value;
+				var time = document.getElementById("time").value; 
+				var result = document.getElementById("result");
+          
+			if (principal.length === 0) {
+			  alert('Please enter the amount!');
+			  } else if(rate.length==0){
+			  alert('Please enter the rate eg 5%');
+			  } else if(time.length==0){
+			  alert('Please enter the time period, like 1 year...');
+			  } 
+			 
+			  else {
+			  
+                // formula interest = (p * r * t/100)
+              result.innerHTML = "Simple interest is :" + (principal*rate*time/100);
+            }
+		}
+        </script>
+
+</body>
+</html>

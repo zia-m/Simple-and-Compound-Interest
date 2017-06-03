@@ -1,0 +1,82 @@
+
+<doctype html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title> UMAI</title>
+<head>
+<style type ="text/css">
+
+body{
+     background-color:white;
+    }
+   div.title{
+         background-color:lightgrey;
+		 height:40px;
+		 width:400px;
+		 color:white;
+		 text-decoration:none;
+		 text-align:center;
+		 clear:both;
+		 padding-bottom:0px;
+		 font-size:30px;
+		 margin: 0 auto;
+		}
+		
+  div.form {
+          margin: 0 auto;
+         text-align:center;
+		 padding-top :50px;
+        
+		}
+
+</style>
+</head>
+
+<body>
+
+<div class="title"><a href="index.html"> UMAI </a></div>
+<div class="form">
+     <p><h3> My Compound Interest </h3></p>
+	 <pre>
+        Principal (in RM)  :<input type="text" id="principal" placeholder="eg, RM 10,000"><br>
+	 Rate of interest(%):<input type="text" id="rate"  placeholder="eg, 5%"> <br>
+	 Time period        :<input type="text" id="time"  placeholder="eg, 1 year"> <br>
+	 Compound Frequency :<input type="text" id="compound"  placeholder="eg, 1 per year"> <br> <br>
+     <button onclick="myCompoundInterest()">Compound Interest</button>
+     </pre>
+	  <p id="result"></p>
+ </div>
+  
+  <!-- JavaScript Code -->
+    <script>
+            function myCompoundInterest()
+            {
+                var principal = document.getElementById("principal").value;
+				var rate = document.getElementById("rate").value;
+				var time = document.getElementById("time").value; 
+                var compound = document.getElementById("compound").value; 
+				
+			if (principal.length === 0) {
+			  alert('Please enter the amount!');
+			  } else if(rate.length==0){
+			  alert('Please enter the rate eg 5%');
+			  } else if(time.length==0){
+			  alert('Please enter the time period, like 1 year...');
+			  } else if(compound.length==0){
+			  alert('Please enter the compound frequency, yearly,...');
+			  }
+			  
+			  else {
+			  
+                result = document.getElementById("result");
+
+                // formula A = p * [[1 + (r/n)] ^ nt]
+                A = (principal* Math.pow((1 + (rate/(compound*100))), (compound*time)));
+                result.innerHTML = "The total is:  " + A.toFixed(2);
+                result.innerHTML += "<br> The interest is:  " + (A.toFixed(2) - principal).toFixed(2);
+            }
+		}
+        </script>
+
+</body>
+</html>
