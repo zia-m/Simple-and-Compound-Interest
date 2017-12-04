@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form name="multiple" action="">
+<center>
+<h2> Enter two numbers to display the multiplication table </h2>
+<input type ="text" name="text1" placeholder="Enter no 1: ">
+<input type ="text" name="text2" placeholder="Enter no 2: ">
+<input type ="button" id="submitBtn" onclick="printTable()" value="Send">
+
+</center>
+</form>
+
+<script type="text/javascript">
+function printTable(){
+var num1,num2;
+
+//Read from HTML Form and parse them
+num1 = parseInt(document.multiple.text1.value);
+num2 = parseInt(document.multiple.text2.value);
+
+//Put them in array
+var array1 = new Array(num1);
+var array2 = new Array(num2);
+
+//Generate random nnumber for row
+for(var i=0; i<array1.length; i++){
+array1[i] = Math.floor((Math.random() * 10) + 1);
+
+}
+//Generate random nnumber for column
+for(var i=0; i<array2.length; i++){
+array2[i] = Math.floor((Math.random() * 10) + 1);
+}
+
+//Display row
+	 document.write("<center>");
+     document.write("<h2> Multiplication Table </h2>");
+     document.write("<table border=2 width=20%>");
+	 document.write("<tr>");
+	 document.write("<td>" +"x"+ "</td>");
+	 
+ for(var x=0;x<array1.length; x++){
+
+     document.write("<td>"+array1[x] +"</td>");
+    }
+   document.write("</tr>");
+   
+  //Display column
+   for(var y=0;y<array2.length; y++){
+     document.write("<tr>");
+     document.write("<td>"+array2[y] +"</td>");
+	 
+	 //Display multiplication table
+	 for(var i=0; i<array1.length; i++){
+	  document.write("<td>"+array1[i]*array2[y] +"</td>");
+
+	 }
+	 document.write("</tr>");
+	 
+   } 
+   document.write("</table>"); 
+   document.write("</center>");   
+}
+</script>
+
+
+</body>
+</html>
