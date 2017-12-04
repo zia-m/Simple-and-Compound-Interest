@@ -1,0 +1,74 @@
+<html>
+<head>   
+<title>Quiz 3</title>
+<script type="text/JavaScript"> 
+  
+var total_c = [];
+var total_w = [];
+var trans=0;
+function reset_field(f3)
+{
+f3.txt.value = null;
+}
+function washing_load(f4)
+{
+var load_value = parseFloat(f4.text.value);
+var cost;
+    if (load_value <= 3.0)
+        {
+        cost = 3.0 * load_value;
+        total_c.push(cost)
+         total_w.push(load_value)
+         trans++;
+        } 
+   else if (load_value > 3.0 && load_value <= 5.0)
+         {
+           cost = 2.5 * load_value;
+           total_c.push(cost)
+           total_w.push(load_value)
+         trans++;
+         }
+   else if (load_value > 5.0 && load_value <= 10.0)
+        {
+           cost = 2.0 * load_value;
+          total_c.push(cost)
+         total_w.push(load_value)
+         trans++;
+         }
+   else 
+        {
+         cost = 1.8 * load_value ;
+         total_c.push(cost)
+         total_w.push(load_value)
+         trans++;
+         }
+   alert ("The washing load is " + load_value + " and the due cost is " + cost + "RM")
+}
+  function total_cost () { 
+  var Total_Cost = 0;
+  var Total_Weight = 0;
+  for (var i = 0; i < total_c.length; i++)
+  {
+    Total_Cost += total_c[i];
+    Total_Weight += total_w[i];
+  }
+  alert("The total no. of Transactions is " + trans + " The total washing load is " + Total_Weight + "  and the total due cost is " + Total_Cost + "RM");
+  }
+</script>
+</head>
+<body>    
+<center> <h3> Laundry Machine </h3> </center> </br> </br>
+<form id = "f2" name="f2" action="">
+<center>
+Enter weight in k.g (3.5):<input type= "text" name ="text" size = "40" />   </br> </br>
+                                                                                   
+<input type= "button" name ="b1" value ="Due cost per washing load" onclick = "washing_load(document.f2)"/>  
+<input type= "reset" name ="b2" value ="Reset" onclick ="reset_field(document.f2.text)"/> </br></br></br>
+
+<input type="button" name="b1" value ="Total Due Cost" onclick = "total_cost()" />
+
+</center>
+
+</form> 
+</body>
+</html>
