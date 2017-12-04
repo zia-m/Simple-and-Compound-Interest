@@ -1,0 +1,178 @@
+
+<!doctype html>
+<html>
+<title>Online Store for Selling Home Appliances </title>
+<head>
+<style type="text/css">
+ .calculate{
+       background-color:#9FFFB1;
+	   width: 200px;
+	   height:45px;
+	   font-size:20px;
+	   border: 2px solid #8FB5C1;
+       border-radius:10px;
+	   text-align:center;
+	   float:middle;
+    }
+	</style>
+
+<script type="text/javascript">
+var itmes=[""];
+ function purchas() {
+
+var item1price = 1000;
+var item2price = 2000;
+var item3price = 250;
+var item4price = 150;
+var item5price = 120;
+var item6price = 500;
+var item7price = 700;
+var item8price = 2000;
+var item9price = 800;
+var item10price = 300;
+var item11price = 400;
+var item12price = 500;
+
+ if (calc.item1.checked==true){
+   var item1 = document.calc.item1.value = item1price
+      itmes.push("Toshiba Fridge = 1000RM");}
+   else {
+   var item1 = document.calc.item1.value = 0 }
+
+   
+ if (calc.item2.checked==true){
+   var item2 = document.calc.item2.value = item2price
+     itmes.push("<br>"+"TV LG 52 inch = 2000RM");}
+   else {
+   var item2 = document.calc.item2.value = 0}
+
+   
+ if (calc.item3.checked ==true) {
+   var item3 = document.calc.item3.value = item3price
+      itmes.push("<br>"+"Microwave Samsung = 250 RM");   }
+   else {
+   var item3 = document.calc.item3.value = 0}
+
+ if (calc.item4.checked==true) {
+   var item4 = document.calc.item4.value = item4price
+      itmes.push("<br>"+"Rice Cooker 4L = 150 RM");}
+   else {
+   var item4 = document.calc.item4.value = 0}
+   
+   if (calc.item5.checked==true) {
+   var item5 = document.calc.item5.value = item5price
+      itmes.push("<br>"+"DVD Player = 120 RM");}
+   else {
+   var item5 = document.calc.item5.value = 0}
+   
+if (calc.item6.checked==true) {
+   var item6 = document.calc.item6.value = item6price
+     itmes.push("<br>"+"TV Cabinet IKEA = 500 RM");}
+   else {
+   var item6 = document.calc.item6.value = 0}
+   
+   if (calc.item7.checked==true) {
+   var item7 = document.calc.item7.value = item7price
+     itmes.push("<br>"+"Dining Table with 4 Chairs = 700 RM");}
+   else {
+   var item7 = document.calc.item7.value = 0}
+
+   
+   if (calc.item8.checked==true) {
+   var item8 = document.calc.item8.value = item8price
+      itmes.push("<br>"+"Sofa 3 seats (Leather) = 2000 RM"); }
+   else {
+   var item8 = document.calc.item8.value = 0}
+   
+   if (calc.item9.checked==true) {
+   var item9 = document.calc.item9.value = item9price
+      itmes.push("<br>"+"Wooden Queen Size Bed = 800 RM");}
+   else {
+   var item9 = document.calc.item9.value = 0}
+   
+   if (calc.item10.checked==true) {
+   var item10 = document.calc.item10.value = item10price
+     itmes.push("<br>"+"Dressing Table Medium = 300 RM"); }
+   else {
+   var item10 = document.calc.item10.value = 0}
+   
+   if (calc.item11.checked==true) {
+   var item11 = document.calc.item11.value = item11price
+   itmes.push("<br>"+"Wooden Closet 4 doors IKEA = 400 RM");}
+   else {
+   var item11 = document.calc.item11.value = 0}
+   
+   if (calc.item12.checked==true) {
+   var item12 = document.calc.item12.value = item12price
+     itmes.push("<br>"+"Queen Size Mattress = 500 RM");}
+   else {
+   var item12 = document.calc.item12.value = 0}
+   
+ 
+ var total = item1+item2+item3+item4+item5+item6+item7+item8+item9+item10+item11+item12;
+ 
+ 	document.getElementById("buy").innerHTML = "The Details of your purchased items are as follow:"+"<br>"+
+	         "Items Selected :"+"<br>"+itmes+"<br>"+	 
+		  	"Total price of purchased items is: " + total+ "RM"+ "<br> <br>" +
+		  	"Thank you for your purchase from us!" ;
+ 
+    }
+ 
+ </script>
+ </head>
+ 
+ <body>
+ <center>
+ <h2 style ="text-align:center"> Online Store for Selling Home Appliances</h2>
+ <form name="calc" method="POST">
+
+ <h3 style ="text-align:center">Electrical Devices</h3>
+ Toshiba Fridge (1000 RM) :<input type="checkbox" name="item1" value="">
+ TV LG 52inch (2000 RM)   :<input type="checkbox" name="item2" value="">
+ Microwave Samsung (RM250): <input type="checkbox" name="item3" value=""><br/><br/>
+ Rice Cooker 4L (150RM)   :<input type="checkbox" name="item4" value="">
+ DVD Player (RM120)       :<input type="checkbox" name="item5" value=""><br/><br/>
+ 
+ 
+ <h3 style ="text-align:center"> Living Room Appliances</h3><br/>
+ TV Cabinet IKEA (RM500)           :<input type="checkbox" name="item6" value="">
+ Dining Table with 4 Chairs (RM700):<input type="checkbox" name="item7" value=""><br/><br/>
+ Sofa 3 seats (Leather) (RM2000)   :<input type="checkbox" name="item8" value=""><br/>
+ 
+ 
+ <h3 style ="text-align:center"> Bed Room Appliances</h3> <br/>
+ Wooden Queen Size Bed (RM800)    :<input type="checkbox" name="item9" value="">
+ Dressing Table Medium (RM300)     :<input type="checkbox" name="item10" value=""><br/><br/>
+ Wooden Closet 4 doors IKEA (RM400):<input type="checkbox" name="item11" value="">
+ Queen Size Mattress(RM500)        :<input type="checkbox" name="item12" value=""><br/><br/>
+    
+	
+    <input type="button" class="calculate"onClick="purchas()" value="Calculate Total">
+    <p id="buy"></p>
+	</center>
+
+</form>
+
+<script type="text/javascript">     
+function my() 
+{
+var sampleArray = [3, 1,2,5,7,6,9,8,4]      
+var ctr = sampleArray.sort();
+          sampleArray.reverse() ;
+		  sampleArray.push(12);
+		  sampleArray.push(10);
+		  sampleArray.push(11);
+		  sampleArray.pop();
+		  sampleArray.shift();
+		  var max = Math.max.apply(Math, sampleArray);
+		  var min = Math.min.apply(Math, sampleArray);
+document.getElementById("sort").innerHTML = ctr+ "<br>"+min +"<br>"+max; 
+} 
+ 
+</script>
+
+<input type="button" onclick="my()" name="whwh" value="Cliclk">
+<p id="sort">
+
+</body>
+</html>
