@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<title> Simple Calculator </title>
+<head>
+<style type="text/css">
+.textField{
+     background-color:#9FFFB1;
+	 width: 230px;
+	 font-size:20px;
+	 height:25px;
+    }
+.calIcon1{
+       background-color:#9FFFB1;
+	   width: 70px;
+	   height:45px;
+	   font-size:30px;
+	   border: 2px solid #8FB5C1;
+       border-radius:10px;
+	   text-align:center;
+	   margin:3px;
+    }
+
+.calIcon2{
+       background-color:#9FFFB1;
+	   width: 110px;
+	   height:45px;
+	   font-size:20px;
+	   border: 2px solid #8FB5C1;
+       border-radius:10px;
+	   text-align:center;
+    }	
+	
+</style>
+<script type="text/javascript">
+var num1,num2;
+function convert()
+{
+num1=parseInt(document.calculator.num1.value);
+num2=parseInt(document.calculator.num2.value);
+}
+
+function multiply()
+   {
+     convert();
+     document.calculator.result.value=num1*num2;
+   }
+   
+   function division()
+   {
+     convert();
+     document.calculator.result.value=(num1/num2).toFixed(2);
+   }
+   
+    function modulus()
+   {
+     convert();
+      
+     document.calculator.result.value=num1 % num2;
+   }
+   
+    function addition()
+   {
+     convert();
+     document.calculator.result.value=num1 + num2;
+   }
+   
+    function subraction()
+   {
+     convert();
+     document.calculator.result.value=num1-num2;
+   }
+   
+   
+     function squareRoot()
+   {
+      convert();
+	  if(num1 != null)
+	  {
+        document.calculator.result.value=Math.sqrt(nu1).toFixed(2);
+	  }
+	   else 
+	  
+	     document.calculator.result.value=Math.sqrt(num2).toFixed(2);
+       }
+   
+     function absoluteValue()
+    {
+       convert();
+	   if(num1<=0)
+	   {
+       document.calculator.result.value=Math.abs(num1);
+	   }
+	   else
+	   document.calculator.result.value=Math.abs(num2);
+    }
+   
+    function maximum()
+   {
+      convert();
+     document.calculator.result.value=Math.max(num1,num2);
+   }
+   
+     function minimum()
+   {
+     convert();
+     document.calculator.result.value=Math.min(num1,num2);
+   }
+   
+   function power()
+   {
+     convert();
+     document.calculator.result.value=Math.pow(num1,num2);
+   }
+   
+    function counter1()
+   {
+     convert();
+     document.calculator.num1.value=num1-1;
+	 document.calculator.num2.value=num2-1;
+   }
+   
+    function counter2()
+   {
+      convert();
+     document.calculator.num1.value=num1+1;
+	 document.calculator.num2.value=num2+1;
+    }
+</script>
+</head>
+
+<body>
+<h3 style="text-align:center">My First Online Calculator</h3>
+<form name="calculator" action="">
+ <p>Please enter the first number :
+ <input type="text" placeholder="Enter number 1" class="textField" name="num1"></p><br/>
+ <p>Please enter the second number:
+ <input type="text" placeholder="Enter number 2" class="textField"name="num2"> </p><br/>
+ <p>The result is : 
+ <input type="text" class="textField"placeholder="The result is" name="result" readonly></p> <br>
+
+ <input type="button" class="calIcon1" value=" * " onclick="multiply()">
+ <input type="button" class="calIcon1" value=" / " onclick="division()">
+ <input type="button" class="calIcon1" value=" % " onclick="modulus()">
+ <input type="button" class="calIcon1" value=" + " onclick="addition()">
+ <input type="button" class="calIcon1" value=" - " onclick="subraction()"> 
+  <br/><br/>
+
+ <input type="button" class="calIcon2" value=" sqrt" onclick="squareRoot()"> 
+ <input type="button" class="calIcon2" value="ABS" onclick="absoluteValue()">
+ <input type="button" class="calIcon2" value="Max" onclick="maximum()">
+ <input type="button" class="calIcon2" value="Min" onclick="minimum()">
+ <input type="button" class="calIcon2" value="Pow" onclick="power()">
+ <input type="button" class="calIcon2" value="Counter--" onclick="counter1()">
+ <input type="button" class="calIcon2" value="Counter++" onclick="counter2()">
+ <button type="reset" class="calIcon2" value="Reset" name="Reset">Resert</button>
+
+ <br/>
+</form>
+
+</body>
+</html>
