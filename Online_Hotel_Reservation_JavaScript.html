@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<title> :::Online Hotel Reservation System </title>
+<head>
+	<script type="text/javascript">
+	
+		function Reserve_Now() {
+			var guest = myForm.no_guest.selectedIndex
+			var price,Payment,days;
+			var method_of_payment = "NON";
+			var myDetails = "NON";
+		
+			if (guest == 1) {
+				if (myForm._1D.checked == true)
+					price = 150
+				else if (myForm._2D.checked == true)
+					price = 150
+				else if (myForm._3D.checked == true)
+					price = 140
+				else if (myForm._4D.checked == true)
+					price = 140
+				else if (myForm._5D.checked == true)
+					price = 120
+			}
+			else if ((guest == 2) || (guest == 3)) {
+				if (myForm._1D.checked == true)
+					price = 250
+				else if (myForm._2D.checked == true)
+					price = 250
+				else if (myForm._3D.checked == true)
+					price = 220
+				else if (myForm._4D.checked == true)
+					price = 220
+				else if (myForm._5D.checked == true)
+					price = 190
+			}
+			else if ((guest == 4) || (guest == 5)) {
+				if (myForm._1D.checked == true)
+					price = 350
+				else if (myForm._2D.checked == true)
+					price = 350
+				else if (myForm._3D.checked == true)
+					price = 330
+				else if (myForm._4D.checked == true)
+					price = 330
+				else if (myForm._5D.checked == true)
+					price = 300
+			}
+			if (myForm.Payment[0].checked == true)
+				method_of_payment = " Cash"
+			else if (myForm.Payment[1].checked == true)
+				method_of_payment = "Credit Card"
+			
+			
+			if (myForm._1D.checked == true)
+				days = 1;
+			else if (myForm._2D.checked == true)
+				days = 2;
+			else if (myForm._3D.checked == true)
+				days = 3;
+			else if (myForm._4D.checked == true)
+				days = 4;
+			else if (myForm._5D.checked == true)
+				days = 5;
+			
+			 
+				myDetails = "Guest per Room is: " + guest + " Persons"+ "<br>";
+				myDetails = myDetails + "Price per day is : " + price + " RM" + "<br>";
+				myDetails = myDetails + "Duration of Stay : " + days + " Days" + "<br>";
+				myDetails = myDetails + "Total Price is   : " + (price*days) + " RM" + "<br>"
+				myDetails = myDetails + "Type of Payment  : " + method_of_payment + "<br>";
+			
+	
+			document.getElementById("guestDetails_p").innerHTML = myDetails;
+			if(document.getElementById("guestDetails_p").innerHTML != null)
+				document.getElementById("Thanks").innerHTML = "Thank you for your booking with us!"
+		}
+	</script> 
+</head>
+<body>
+	<h1 style="text-align:center">Online Hotel Reservation System</h1>
+	<form id="myForm" name="myForm" action=""><br> 
+		Please select the no. of guest:
+		<select name="no_guest">
+			<option>Select the No. of guest(s):</option> 
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option> 
+		</select><br><br>
+		Please select the duration of stay:<br>
+		
+				<input type="checkbox" name="_1D" onclick="numberOfDay()">1 day
+				<input type="checkbox" name="_2D" onclick="numberOfDay()">2 days<br>
+				<input type="checkbox" name="_3D" onclick="numberOfDay()">3 days
+				<input type="checkbox" name="_4D" onclick="numberOfDay()">4 days<br> 
+				<input type="checkbox" name="_5D" onclick="numberOfDay()">5 days<br>
+			
+		Type of Payment:<br>
+		<input type="radio" name="Payment">Cash<br> 
+		<input type="radio" name="Payment">Credit Card<br><br>
+		<input type="button" value = "Show booking details" onclick="Reserve_Now()">
+	</form><br><br><br>
+	<p>The details of your reservation are as follow:</p>
+	<p id="guestDetails_p"></p><br>
+	<p id="Thanks" style="text-align:center;font-weight: bold;"></p>
+</body>
+</html>
