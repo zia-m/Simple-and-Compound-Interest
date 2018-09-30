@@ -1,1 +1,1 @@
-# Simple-and-Compound-Interest
+# javascript-code
